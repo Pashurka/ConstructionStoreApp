@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructionStoreApp.Views.ReviewsPage"
+             Title="Відгуки про Ручку меблеву ALFA">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="15">
+                <Image Source="handle_alfa" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center"/>
+
+                <Label Text="Середня оцінка: 4.5 ⭐" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                <!-- Відгуки -->
+                <StackLayout>
+                    <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                        <StackLayout>
+                            <Label Text="Олександр К." FontAttributes="Bold"/>
+                            <Label Text="⭐⭐⭐⭐⭐" TextColor="Gold"/>
+                            <Label Text="Чудова якість, виглядає стильно!"/>
+                            <Label Text="Дата: 2025-03-25 12:10" FontSize="12" TextColor="Gray"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                        <StackLayout>
+                            <Label Text="Марина В." FontAttributes="Bold"/>
+                            <Label Text="⭐⭐⭐⭐" TextColor="Gold"/>
+                            <Label Text="Гарний товар, але була затримка з доставкою."/>
+                            <Label Text="Дата: 2025-03-25 12:15" FontSize="12" TextColor="Gray"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                        <StackLayout>
+                            <Label Text="Василь П." FontAttributes="Bold"/>
+                            <Label Text="⭐⭐⭐⭐⭐" TextColor="Gold"/>
+                            <Label Text="Все відповідає опису, якість супер!"/>
+                            <Label Text="Дата: 2025-03-25 12:20" FontSize="12" TextColor="Gray"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                        <StackLayout>
+                            <Label Text="Ірина Л." FontAttributes="Bold"/>
+                            <Label Text="⭐⭐⭐⭐" TextColor="Gold"/>
+                            <Label Text="Задоволена покупкою, але упаковка могла бути кращою."/>
+                            <Label Text="Дата: 2025-03-25 12:30" FontSize="12" TextColor="Gray"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                        <StackLayout>
+                            <Label Text="Дмитро С." FontAttributes="Bold"/>
+                            <Label Text="⭐⭐⭐⭐⭐" TextColor="Gold"/>
+                            <Label Text="Швидка доставка, якісний товар!"/>
+                            <Label Text="Дата: 2025-03-25 12:45" FontSize="12" TextColor="Gray"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ConstructionStoreApp.ViewModels"
+             x:Class="ConstructionStoreApp.Views.ProductDetailPage"
+             Title="Деталі товару">
+
+    <ContentPage.BindingContext>
+        <viewModels:ProductDetailViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15">
+            <!-- Головна картка товару -->
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="15" HasShadow="True">
+                <StackLayout Spacing="15">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Image Source="handle_alfa" WidthRequest="120" HeightRequest="120" Aspect="AspectFill"/>
+                        <StackLayout>
+                            <Label Text="Ручка меблева ALFA" FontAttributes="Bold" FontSize="18"/>
+                            <Label Text="75.50 грн" TextColor="Green" FontSize="16" FontAttributes="Bold"/>
+                            <Label Text="Код товару: ALFA-2024-SS" FontSize="12" TextColor="Gray"/>
+                            <Label Text="В наявності: 15 шт." TextColor="Blue"/>
+                            <Button Text="Купити" BackgroundColor="#FF5722" TextColor="White" 
+                                HorizontalOptions="Start" Padding="20,0"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!-- Рейтинг та відгуки -->
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Label Text="Рейтинг:" FontSize="14"/>
+                        <Image Source="star_filled" WidthRequest="15" HeightRequest="15"/>
+                        <Image Source="star_filled" WidthRequest="15" HeightRequest="15"/>
+                        <Image Source="star_filled" WidthRequest="15" HeightRequest="15"/>
+                        <Image Source="star_filled" WidthRequest="15" HeightRequest="15"/>
+                        <Image Source="star_half" WidthRequest="15" HeightRequest="15"/>
+                        <Label Text="(24 відгуки)" FontSize="12" TextColor="Gray"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <!-- Опис товару -->
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="15">
+                <StackLayout Spacing="10">
+                    <Label Text="Опис товару" FontAttributes="Bold" FontSize="16"/>
+                    <Label Text="Преміум ручка для меблів з нержавіючої сталі. Ідеальний вибір для сучасних кухонь, шаф та інших меблів. Забезпечує зручне відкриття дверей." FontSize="14"/>
+                    <Label Text="Особливості:" FontAttributes="Bold" FontSize="14"/>
+                    <StackLayout Spacing="5">
+                        <Label Text="• Ергономічний дизайн" FontSize="14"/>
+                        <Label Text="• Стильний сучасний вигляд" FontSize="14"/>
+                        <Label Text="• Антикорозійне покриття" FontSize="14"/>
+                        <Label Text="• Легкий монтаж" FontSize="14"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <!-- Технічні характеристики -->
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="15">
+                <StackLayout Spacing="10">
+                    <Label Text="Технічні характеристики" FontAttributes="Bold" FontSize="16"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Матеріал:" Grid.Row="0" Grid.Column="0" FontSize="14"/>
+                        <Label Text="Нержавіюча сталь 304" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+
+                        <Label Text="Колір:" Grid.Row="1" Grid.Column="0" FontSize="14"/>
+                        <Label Text="Хромоване покриття" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+
+                        <Label Text="Розміри:" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+                        <Label Text="128 x 32 мм" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+
+                        <Label Text="Вага:" Grid.Row="3" Grid.Column="0" FontSize="14"/>
+                        <Label Text="85 г" Grid.Row="3" Grid.Column="1" FontSize="14"/>
+
+                        <Label Text="Кріплення:" Grid.Row="4" Grid.Column="0" FontSize="14"/>
+                        <Label Text="2 гвинти M4 (в комплекті)" Grid.Row="4" Grid.Column="1" FontSize="14"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <!-- Комплектація -->
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="15">
+                <StackLayout Spacing="10">
+                    <Label Text="Комплектація" FontAttributes="Bold" FontSize="16"/>
+                    <Label Text="• Ручка меблева - 1 шт." FontSize="14"/>
+                    <Label Text="• Гвинти для монтажу - 2 шт." FontSize="14"/>
+                    <Label Text="• Інструкція з монтажу" FontSize="14"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Гарантія -->
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="15">
+                <StackLayout Spacing="10">
+                    <Label Text="Гарантія та повернення" FontAttributes="Bold" FontSize="16"/>
+                    <Label Text="Гарантія: 24 місяці" FontSize="14" TextColor="Green"/>
+                    <Label Text="Повернення протягом 14 днів без пояснення причин" FontSize="14"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

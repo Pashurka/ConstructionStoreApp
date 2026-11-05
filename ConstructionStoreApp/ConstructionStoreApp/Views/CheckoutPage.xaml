@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructionStoreApp.Views.CheckoutPage"
+             Title="Оформлення замовлення">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+                <!-- Order Summary -->
+                <Frame BorderColor="LightGray" CornerRadius="5" Padding="15">
+                    <StackLayout>
+                        <Label Text="Ваше замовлення:" FontAttributes="Bold" FontSize="Medium"/>
+
+                        <!-- Kitchen countertops -->
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Стільниця кухонна" FontSize="Small"/>
+                            <Label Text="3 × 1200.00 грн" FontSize="Small" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="3600.00 грн" FontSize="Small" FontAttributes="Bold" HorizontalOptions="End"/>
+                        </StackLayout>
+
+                        <!-- MDF front -->
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Фасад MDF" FontSize="Small"/>
+                            <Label Text="1 × 320.40 грн" FontSize="Small" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="320.40 грн" FontSize="Small" FontAttributes="Bold" HorizontalOptions="End"/>
+                        </StackLayout>
+
+                        <!-- Furniture legs -->
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Ніжка меблева" FontSize="Small"/>
+                            <Label Text="4 × 85.75 грн" FontSize="Small" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="343.00 грн" FontSize="Small" FontAttributes="Bold" HorizontalOptions="End"/>
+                        </StackLayout>
+
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" Margin="0,10"/>
+
+                        <!-- Total -->
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Всього:" FontSize="Medium"/>
+                            <Label Text="4263.40 грн" FontSize="Medium" FontAttributes="Bold" TextColor="Green" HorizontalOptions="End"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Delivery Information -->
+                <Label Text="Дані для доставки:" FontAttributes="Bold" FontSize="Medium"/>
+
+                <Entry Placeholder="ПІБ" x:Name="FullNameEntry"/>
+                <Entry Placeholder="Телефон" x:Name="PhoneEntry" Keyboard="Telephone"/>
+                <Entry Placeholder="Місто" x:Name="CityEntry"/>
+                <Entry Placeholder="Відділення Нова Пошта" x:Name="DeliveryEntry"/>
+                <Editor Placeholder="Коментар до замовлення (необов'язково)" 
+                       x:Name="CommentEditor" 
+                       HeightRequest="80"/>
+
+                <!-- Payment Method -->
+                <Label Text="Спосіб оплати:" FontAttributes="Bold" FontSize="Medium" Margin="0,10,0,0"/>
+                <Picker x:Name="PaymentPicker" Title="Оберіть спосіб оплати">
+                    <Picker.Items>
+                        <x:String>Готівкою при отриманні</x:String>
+                        <x:String>Оплата карткою онлайн</x:String>
+                        <x:String>Накладений платіж</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <!-- Promo Code -->
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Entry Placeholder="Промокод (якщо є)" x:Name="PromoCodeEntry" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Застосувати" BackgroundColor="#f8f9fa" TextColor="#007bff"/>
+                </StackLayout>
+
+                <!-- Confirm Button -->
+                <Button Text="Підтвердити замовлення" 
+                        BackgroundColor="#007bff" 
+                        TextColor="White" 
+                        CornerRadius="5"
+                        HeightRequest="50"
+                        FontAttributes="Bold"
+                        Margin="0,20"/>
+
+                <!-- Back to cart -->
+                <Button Text="Повернутись до кошика" 
+                        BackgroundColor="Transparent" 
+                        TextColor="#007bff" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

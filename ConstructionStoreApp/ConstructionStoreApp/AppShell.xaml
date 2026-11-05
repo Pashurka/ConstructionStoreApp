@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ConstructionStoreApp.Views"
+       Title="ConstructionStoreApp"
+       x:Class="ConstructionStoreApp.AppShell">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#FFD700</Color>
+            <Color x:Key="Accent">#1E90FF</Color>
+
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+
+            </Style>
+
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Accent}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Accent}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Accent}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- Вміст бокового меню -->
+    <FlyoutItem Title="Авторизація" Icon="icon_login.png">
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Каталог товарів" Icon="icon_filter.png">
+        <ShellContent Route="CatalogPage" ContentTemplate="{DataTemplate local:CatalogPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Кошик" Icon="icon_cart.png">
+        <ShellContent Route="CartPage" ContentTemplate="{DataTemplate local:CartPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Профіль користувача" Icon="icon_payment.png">
+        <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Повідомлення" Icon="icon_notifications.png">
+        <ShellContent Route="NotificationsPage" ContentTemplate="{DataTemplate local:NotificationsPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Улюбленні товари" Icon="icon_favorites.png">
+        <ShellContent Route="ProductDetailPage" ContentTemplate="{DataTemplate local:ProductDetailPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Відгуки/рецензії" Icon="icon_reviews.png">
+        <ShellContent Route="ReviewsPage" ContentTemplate="{DataTemplate local:ReviewsPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Налаштування" Icon="icon_settings.png">
+        <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate local:SettingsPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Тех.підтримка" Icon="icon_delivery.png">
+        <ShellContent Route="CheckoutPage" ContentTemplate="{DataTemplate local:CheckoutPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Про додаток" Icon="icon_about.png">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+    </FlyoutItem>
+    
+    <!-- Пункт меню для виходу -->
+    <MenuItem Text="Вихід з системи" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuExitClicked">
+    </MenuItem>
+
+</Shell>

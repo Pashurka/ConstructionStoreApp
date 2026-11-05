@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructionStoreApp.Views.CatalogPage"
+             Title="Каталог товарів">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="15">
+                <!-- Товар 1 -->
+                <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="handle_alfa.jpg" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
+                        <StackLayout>
+                            <Label Text="Ручка меблева ALFA" FontAttributes="Bold"/>
+                            <Label Text="75.50 грн" TextColor="Green"/>
+                            <Label Text="Преміум ручка з нержавіючої сталі" FontSize="Small"/>
+                            <Label Text="В наявності: 15" TextColor="Blue"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Товар 2 -->
+                <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="hinge_royal.jpg" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
+                        <StackLayout>
+                            <Label Text="Петля рояльна" FontAttributes="Bold"/>
+                            <Label Text="12.80 грн" TextColor="Green"/>
+                            <Label Text="Класичні меблеві петлі" FontSize="Small"/>
+                            <Label Text="Немає в наявності" TextColor="Red"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Товар 3 -->
+                <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="drawer_rail.jpg" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
+                        <StackLayout>
+                            <Label Text="Напрямна для шухляди" FontAttributes="Bold"/>
+                            <Label Text="45.20 грн" TextColor="Green"/>
+                            <Label Text="Телескопічна напрямна 400мм" FontSize="Small"/>
+                            <Label Text="В наявності: 8" TextColor="Blue"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Товар 4 -->
+                <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="kitchen_countertop.jpg" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
+                        <StackLayout>
+                            <Label Text="Стільниця кухонна" FontAttributes="Bold"/>
+                            <Label Text="1200.00 грн" TextColor="Green"/>
+                            <Label Text="Дубова стільниця товщиною 40мм" FontSize="Small"/>
+                            <Label Text="В наявності: 3" TextColor="Blue"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Товар 5 -->
+                <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="furniture_leg.jpg" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
+                        <StackLayout>
+                            <Label Text="Ніжка меблева" FontAttributes="Bold"/>
+                            <Label Text="85.75 грн" TextColor="Green"/>
+                            <Label Text="Хромована ніжка висотою 70см" FontSize="Small"/>
+                            <Label Text="В наявності: 22" TextColor="Blue"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Товар 6 -->
+                <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="mdf_front.jpg" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
+                        <StackLayout>
+                            <Label Text="Фасад MDF" FontAttributes="Bold"/>
+                            <Label Text="320.40 грн" TextColor="Green"/>
+                            <Label Text="Фасад з MDF з плівкою ПВХ" FontSize="Small"/>
+                            <Label Text="В наявності: 5" TextColor="Blue"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Товар 7 -->
+                <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="panel_board.jpg" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
+                        <StackLayout>
+                            <Label Text="Меблевий щит" FontAttributes="Bold"/>
+                            <Label Text="180.90 грн" TextColor="Green"/>
+                            <Label Text="Сосновий щит 2000x600x18мм" FontSize="Small"/>
+                            <Label Text="В наявності: 12" TextColor="Blue"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Товар 8 -->
+                <Frame BorderColor="LightGray" CornerRadius="5" Padding="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="shelf_bracket.jpg" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
+                        <StackLayout>
+                            <Label Text="Кріплення для полиць" FontAttributes="Bold"/>
+                            <Label Text="8.50 грн" TextColor="Green"/>
+                            <Label Text="Металічні кронштейни для полиць" FontSize="Small"/>
+                            <Label Text="Немає в наявності" TextColor="Red"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

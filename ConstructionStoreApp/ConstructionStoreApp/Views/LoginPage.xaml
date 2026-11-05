@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ConstructionStoreApp.Views.LoginPage"
+             Title="Авторизація"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="10" VerticalOptions="Center">
+            <Image Source="icon_store.png" VerticalOptions="Center" HeightRequest="300" />
+            <!-- Заголовок -->
+            <Label 
+                Text="Вхід до системи"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Margin="0,0,0,20" />
+
+            <!-- Поле для введення логіну -->
+            <Entry 
+                x:Name="UsernameEntry"
+                Placeholder="Логін"
+                Text="{Binding Username, StringFormat='dmytro@gmail.com'}"
+                HorizontalOptions="FillAndExpand" />
+
+            <!-- Поле для введення паролю -->
+            <Entry 
+                x:Name="PasswordEntry"
+                Placeholder="Пароль"
+                Text="{Binding Password, StringFormat='password'}"
+                IsPassword="True"
+                HorizontalOptions="FillAndExpand" />
+
+            <!-- Кнопка входу -->
+            <Button 
+                Text="Увійти"
+                Command="{Binding LoginCommand}"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                HorizontalOptions="FillAndExpand"
+                Margin="0,20,0,0" />
+
+            <!-- Кнопка входу -->
+            <Button 
+                Text="Увійти як гість"
+                BackgroundColor="#1A78C2"
+                TextColor="White"
+                HorizontalOptions="FillAndExpand"
+                Margin="0,20,0,0" />
+
+            <!-- Повідомлення про помилку -->
+            <Label 
+                x:Name="ErrorLabel"
+                Text="{Binding ErrorMessage}"
+                TextColor="Red"
+                HorizontalOptions="Center"
+                IsVisible="{Binding HasError}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

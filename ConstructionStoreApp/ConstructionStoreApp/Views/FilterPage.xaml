@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ConstructionStoreApp.ViewModels"
+             x:Class="ConstructionStoreApp.Views.FilterPage"
+             Title="Пошук товарів">
+
+    <ContentPage.BindingContext>
+        <viewModels:CatalogViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ProductTitle" TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#333333"/>
+            </Style>
+
+            <Style x:Key="PriceLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="#2c7873"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <!-- Панель пошуку та сортування -->
+            <StackLayout Spacing="10">
+                <SearchBar Placeholder="Пошук товарів..."
+                           TextChanged="OnSearchTextChanged"
+                           BackgroundColor="White"
+                           CancelButtonColor="#2c7873"/>
+
+                <Picker Title="Сортування"
+                        SelectedIndexChanged="OnSortingChanged">
+                    <Picker.Items>
+                        <x:String>За ціною (зростання)</x:String>
+                        <x:String>За ціною (спадання)</x:String>
+                        <x:String>За назвою</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <!-- Список товарів -->
+            <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                         Command="{Binding LoadProductsCommand}">
+                <CollectionView ItemsSource="{Binding Products}"
+                                SelectionMode="None"
+                                EmptyView="Товари не знайдено">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Margin="0,5"
+                                   Padding="10"
+                                   CornerRadius="10"
+                                   HasShadow="True"
+                                   BackgroundColor="White">
+                                <Grid ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Зображення товару -->
+                                    <Image Grid.Column="0"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="100"
+                                           WidthRequest="100">
+                                        <Image.Clip>
+                                            <RectangleGeometry Rect="0,0,100,100"/>
+                                        </Image.Clip>
+                                    </Image>
+
+                                    <!-- Інформація про товар -->
+                                    <StackLayout Grid.Column="1" Spacing="5">
+                                        <Label Text="{Binding Name}" 
+                                               Style="{StaticResource ProductTitle}"/>
+
+                                        <Label Text="{Binding Price, StringFormat='Ціна: {0} грн'}" 
+                                               Style="{StaticResource PriceLabel}"/>
+
+                                        <Label Text="{Binding Availability}"
+                                               TextColor="{Binding AvailabilityColor}"/>
+
+                                        <Button Text="Детальніше"
+                                                BackgroundColor="#2c7873"
+                                                TextColor="White"
+                                                CornerRadius="20"
+                                                Command="{Binding Source={x:Reference CatalogPage}, Path=BindingContext.ShowDetailsCommand}"
+                                                CommandParameter="{Binding .}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
